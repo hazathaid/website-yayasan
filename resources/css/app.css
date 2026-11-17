@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50;
+    }
+
+    .card {
+        @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md;
+    }
+
+    .input {
+        @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-800 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200;
+    }
+
+    .label {
+        @apply mb-1.5 block text-sm font-medium text-slate-700;
+    }
+
+    .prose-content {
+        @apply text-slate-700 leading-relaxed;
+    }
+
+    .prose-content p {
+        @apply mb-4;
+    }
+
+    .prose-content h2 {
+        @apply mb-3 mt-8 text-2xl font-bold text-slate-900;
+    }
+
+    .prose-content h3 {
+        @apply mb-2 mt-6 text-xl font-semibold text-slate-900;
+    }
+
+    .prose-content ul {
+        @apply mb-4 list-disc space-y-1 pl-6;
+    }
+
+    .prose-content ol {
+        @apply mb-4 list-decimal space-y-1 pl-6;
+    }
+
+    .prose-content a {
+        @apply text-emerald-700 underline;
+    }
+
+    .prose-content blockquote {
+        @apply my-4 border-l-4 border-emerald-500 bg-emerald-50 px-4 py-3 italic;
+    }
+}
