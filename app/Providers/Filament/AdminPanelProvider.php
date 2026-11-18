@@ -28,7 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Admin Yayasan')
+            ->brandName(fn () => setting('site_name') ?: 'Admin Yayasan')
+            ->brandLogo(fn () => media_url(setting('logo_path')))
+            ->brandLogoHeight('2rem')
+            ->favicon(asset('favicon.ico'))
             ->colors([
                 'primary' => Color::Emerald,
             ])
@@ -44,7 +47,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
